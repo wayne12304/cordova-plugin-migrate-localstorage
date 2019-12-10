@@ -10,7 +10,7 @@ left of.
 
 Simply add the plugin to your cordova project via the cli:
 ```sh
-cordova plugin add cordova-plugin-migrate-localstorage
+cordova plugin add https://github.com/wayne12304/cordova-plugin-migrate-localstorage.git
 ```
 
 ## Notes
@@ -27,6 +27,8 @@ To test if data is migrated over correctly:
 - Once the data is copied over, it is not being synced back to `UIWebView` so any changes done in
 `WKWebView` will not persist should you ever move back to `UIWebView`. If you have a problem with this,
 let us know in the issues section!
+
+- If you need to move back to `UIWebView`, and synced localStorage data form `WKWebView`, you can modify `MigrateLocalStorage.m`,change pluginInitialize call `igrateLocalStorageUiToWk` or `migrateLocalStorageWkToUi`, migrate localStorage data between `UIWebView` and `UIWebView`
 
 ## Background
 
